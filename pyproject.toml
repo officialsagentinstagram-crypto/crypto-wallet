@@ -1,0 +1,18 @@
+[project]
+name = "crypto-wallet"
+version = "0.1.0"
+description = "Python CLI crypto wallet for Ethereum, Bitcoin, and Solana."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "bip-utils==2.9.0",
+  "eth-account==0.9.0",
+  "bit==0.8.0",
+  "cryptography==41.0.0",
+  "pynacl==1.6.1",
+  "solana==0.36.12",
+  "requests==2.31.0"
+]
+
+[project.scripts]
+wallet = "wallet.cli:main"

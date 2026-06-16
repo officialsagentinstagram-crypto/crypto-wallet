@@ -1,0 +1,4 @@
+- [x] Verify that the copilot-instructions.md file exists in the .github directory.
+- [ ] Scaffold a Python wallet CLI that supports Ethereum, Bitcoin, and Solana.
+- [ ] Include secure local storage for mnemonic encryption using a password.
+- [ ] Provide a README with usage examples.

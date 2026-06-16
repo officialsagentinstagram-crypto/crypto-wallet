@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Wallet</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Crypto Wallet</h1>
+        
+        <div class="section">
+            <h2>1. Choose Blockchain</h2>
+            <select id="chain">
+                <option value="ethereum">Ethereum</option>
+                <option value="bitcoin">Bitcoin</option>
+                <option value="solana">Solana</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <h2>2. Wallet Actions</h2>
+            <div class="button-group">
+                <button onclick="createWallet()">Create Wallet</button>
+                <button onclick="showImportForm()">Import from Mnemonic</button>
+                <button onclick="showLoadForm()">Load Encrypted Wallet</button>
+            </div>
+        </div>
+
+        <div id="importForm" class="hidden">
+            <h3>Import Wallet</h3>
+            <textarea id="mnemonicInput" placeholder="Enter 12-word mnemonic phrase..."></textarea>
+            <button onclick="importWallet()">Import</button>
+            <button onclick="hideImportForm()">Cancel</button>
+        </div>
+
+        <div id="loadForm" class="hidden">
+            <h3>Load Encrypted Wallet</h3>
+            <input type="password" id="loadPassword" placeholder="Enter password...">
+            <button onclick="loadWallet()">Load</button>
+            <button onclick="hideLoadForm()">Cancel</button>
+        </div>
+
+        <div id="result" class="section hidden">
+            <h2>Result</h2>
+            <pre id="resultContent"></pre>
+            <div class="button-group">
+                <button onclick="copyResult()">Copy</button>
+                <button onclick="showSignForm()">Sign Message</button>
+                <button onclick="showSaveForm()">Save Encrypted</button>
+                <button onclick="clearResult()">Clear</button>
+            </div>
+        </div>
+
+        <div id="signForm" class="hidden">
+            <h3>Sign Message</h3>
+            <input type="text" id="messageInput" placeholder="Enter message to sign...">
+            <button onclick="signMessage()">Sign</button>
+            <button onclick="hideSignForm()">Cancel</button>
+        </div>
+
+        <div id="saveForm" class="hidden">
+            <h3>Save Encrypted Wallet</h3>
+            <input type="password" id="savePassword" placeholder="Enter password...">
+            <input type="password" id="savePasswordConfirm" placeholder="Confirm password...">
+            <button onclick="saveWallet()">Save</button>
+            <button onclick="hideSaveForm()">Cancel</button>
+        </div>
+
+        <div id="status" class="status hidden"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
